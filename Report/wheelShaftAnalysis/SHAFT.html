@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shaft Component Generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body,p,table,th,td,h1,h2,h3,h4,h5{font-weight: normal; font-size: 10pt; font-family: Tahoma, Arial, Helvetica, sans-serif}
+body{color: #000000; background-color: #ffffff}
+h1{font-weight: bold; font-size: 145%; margin-bottom: 1em}
+h2{font-weight: bold; font-size: 130%; margin-bottom: 0.6em}
+h3{font-weight: bold; font-size: 120%; margin-bottom: 0.5em}
+h4{font-weight: bold; font-size: 110%; margin-bottom: 0.5em}
+h5{font-weight: bold; font-size: 100%; margin-bottom: 0.5em}
+p{margin: 0.5em 0em 0.3em 0em; line-height: 100%}
+blockquote{margin: 0em 0em 0em 1em; font-size: 100%; line-height: 100%; direction: ltr}
+.ta{border: dodgerblue 1px solid; border-collapse: collapse; background-color: #d9e6ff}
+.ta td,.ta th{border: dodgerblue 1px solid; padding: 2pt; valign: top}
+.ta0{border: 0px; margin-top: -4px; margin-bottom: -4px}
+.ta0 td{border: 0px; valign: top}
+.collapsed{background: url("data:image/gif;base64,R0lGODlhCQAJAIAAAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIRhI+hG7bwoJINIktzjizeUwAAOw==") left center no-repeat; display: block; padding: 0 0 0 14px; cursor: pointer}
+.expanded{background: url("data:image/gif;base64,R0lGODlhCQAJAIAAAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIQhI+hG8brXgPzTHllfKiDAgA7") left center no-repeat; display: block; padding: 0 0 0 14px; cursor: pointer}
+</style>
+<script type="text/javascript">
+var toggle = function(e) {
+	var elem = e.target;
+	var elemNext = elem.nextElementSibling;
+	if (elemNext){
+		var st = elemNext.style;
+		if (st)
+			if (st.display == "none"){
+				elem.className = "expanded";
+				st.removeProperty("display");
+			}else{
+				elem.className = "collapsed";
+				st.display = "none";
+			}
+	}
+}
+window.onload = function() {
+	var elems = document.getElementsByClassName("expanded");
+	for(var i = 0; i < elems.length; i++) {
+		var elem = elems[i]
+		elem.onclick = toggle;
+		var elemNext = elem.nextElementSibling;
+		if (elemNext){
+			var st = elemNext.style;
+			if (st)
+				st.removeProperty("display");
+		}
+	}
+	elems = document.getElementsByClassName("collapsed");
+	for(var i = 0; i < elems.length; i++) {
+		var elem = elems[i]
+		elem.onclick = toggle;
+		var elemNext = elem.nextElementSibling;
+		if (elemNext){
+			var st = elemNext.style;
+			if (st)
+				st.display = "none";
+		}
+	}
+}</script>
+</head>
+<body>
+<h1>Shaft Component Generator (Version: 2020.3 (Build 243373000, 373))</h1>
+<p>27/06/2022</p>
+<hr />
+<h3 class="collapsed">Project Info</h3>
+<blockquote>
+	<h5 class="collapsed">Summary</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>Title</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Subject</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Author</td>
+		<td>0x6f736f646f</td>
+		</tr>
+		<tr>
+		<td>Manager</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Company</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Category</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Keywords</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Comments</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+	<h5 class="collapsed">Project</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>Part Number</td>
+		<td>Assembled</td>
+		</tr>
+		<tr>
+		<td>Stock Number</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Description</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Revision Number</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Project</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Designer</td>
+		<td>0x6f736f646f</td>
+		</tr>
+		<tr>
+		<td>Engineer</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Authority</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Cost Center</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Cost</td>
+		<td>Ksh0.00</td>
+		</tr>
+		<tr>
+		<td>Date Created</td>
+		<td>27/06/2022</td>
+		</tr>
+		<tr>
+		<td>Vendor</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Catalog web link</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+	<h5 class="collapsed">Status</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>User Status</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Design Status</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>Last Saved By</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Checked by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Engr Approved by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Date Eng Approved</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Part Type name</td>
+		<td>Assembly</td>
+		</tr>
+		<tr>
+		<td>Mfg Approved by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Date Mfg Approved</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Standard</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Manufacturer</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Standards Organization</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+</blockquote>
+<h3 class="expanded">Calculation</h3>
+<blockquote>
+<h5 class="expanded">Material</h5>
+<blockquote>
+<table class="ta">
+	<tr>
+		<td>Material</td>
+		<td></td>
+		<td align=middle><FONT color=magenta>Grey cast iron</FONT></td>
+	</tr>
+	<tr>
+		<td>Modulus of Elasticity</td>
+		<td align=middle>E</td>
+		<td align=middle><FONT color=black>102000 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Modulus of Rigidity</td>
+		<td align=middle>G</td>
+		<td align=middle><FONT color=black>41000 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Density</td>
+		<td align=middle>&rho;</td>
+		<td align=middle><FONT color=black>7160 kg/m^3</FONT></td>
+	</tr>
+</table>
+</blockquote>
+<h5 class="expanded">Calculation Properties</h5>
+<blockquote>
+<table class=ta>
+	<tr>
+		<td align=middle>Include</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td align=middle>Yes</td>
+		<td>Density</td>
+		<td align=middle>&rho;</td>
+		<td align=middle><FONT color=black>7160 kg/m^3</FONT></td>
+	</tr>
+	<tr>
+		<td align=middle>Yes</td>
+		<td>Shear Displacement Ratio</td>
+		<td align=middle>&beta;</td>
+		<td align=middle><FONT color=magenta>1.188 ul</FONT></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Number of Divisions</td>
+		<td></td>
+		<td align=middle><FONT color=magenta>1000 ul</FONT></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Mode of reduced stress</td>
+		<td></td>
+		<td align=middle>HMH</td>
+	</tr>
+</table>
+</blockquote>
+
+<h5 class="expanded">Loads</h5>
+<blockquote>
+<table class=ta>
+	<tr>
+		<td align=middle rowspan=2>Index</td>
+		<td align=middle rowspan=2>Location</td>
+		<td align=middle colspan=4>Radial Force</td>
+		<td align=middle colspan=4>Bending Moment</td>
+		<td align=middle colspan=5>Continuous Load</td>
+		<td align=middle rowspan=2>Axial Force</td>
+		<td align=middle rowspan=2>Torque</td>
+		<td align=middle colspan=4>Deflection</td>
+		<td align=middle rowspan=2>Deflection Angle</td>
+	</tr>
+	<tr>
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+		<td align=middle>Length</td>
+
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+	</tr>
+	<TR><TD>F1</TD>
+<TD>33.5 mm</TD>
+<TD>73.575 N</TD>
+<TD></TD>
+<TD>73.575 N</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>-0.000 microm</TD>
+<TD></TD>
+<TD>0.000 microm</TD>
+<TD>180.00 deg</TD>
+<TD>0.00 deg</TD>
+</TR>
+
+</table>
+</blockquote>
+
+<h5 class="expanded">Supports</h5>
+<blockquote>
+<table class=ta>
+	<tr>
+		<td align=middle rowspan=2>Index</td>
+		<td align=middle rowspan=2>Type</td>
+		<td align=middle rowspan=2>Location</td>
+		<td align=middle colspan=5>Reaction Force</td>
+		<td align=middle rowspan=2>Yielding</td>
+		<td align=middle rowspan=2>Type</td>
+		<td align=middle colspan=4>Deflection</td>
+		<td align=middle rowspan=2>Deflection Angle</td>
+	</tr>
+	<tr>
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+		<td align=middle>Axial Force</td>
+
+		<td align=middle>Y</td>
+		<td align=middle>X</td>
+		<td align=middle>Size</td>
+		<td align=middle>Direction</td>
+	</tr>
+	<TR><TD>1</TD><TD>Free</TD>
+<TD>0 mm</TD>
+<TD>0.016 N</TD>
+<TD></TD>
+<TD>0.016 N</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>User</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>0.00 deg</TD>
+<TR><TD>2</TD><TD>Fixed</TD>
+<TD>33.5 mm</TD>
+<TD>73.642 N</TD>
+<TD></TD>
+<TD>73.642 N</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>User</TD>
+<TD>-0.000 microm</TD>
+<TD></TD>
+<TD>0.000 microm</TD>
+<TD>180.00 deg</TD>
+<TD>0.00 deg</TD>
+<TR><TD>3</TD><TD>Free</TD>
+<TD>64.5 mm</TD>
+<TD>0.017 N</TD>
+<TD></TD>
+<TD>0.017 N</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>User</TD>
+<TD>-0.000 microm</TD>
+<TD></TD>
+<TD>0.000 microm</TD>
+<TD>180.00 deg</TD>
+<TD>0.00 deg</TD>
+
+</table>
+</blockquote>
+
+<h5 class="expanded">Results</h5>
+<blockquote>
+<table class=ta>
+	<tr>
+		<td>Length</td>
+		<td align=middle>L</td>
+		<td align=middle><FONT color=black>67.000 mm</FONT></td>
+	</tr>
+	<tr>
+		<td>Mass</td>
+		<td align=middle>Mass</td>
+		<td align=middle><FONT color=black>0.010 kg</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Bending Stress</td>
+		<td align=middle>&sigma;<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">B</span></td>
+		<td align=middle><FONT color=black>0.016 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Shear Stress</td>
+		<td align=middle>&tau;<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">S</span></td>
+		<td align=middle><FONT color=black>0.002 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Torsional Stress</td>
+		<td align=middle>&tau;</td>
+		<td align=middle><FONT color=black>0.000 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Tension Stress</td>
+		<td align=middle>&sigma;<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">T</span></td>
+		<td align=middle><FONT color=black>0.000 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Reduced Stress</td>
+		<td align=middle>&sigma;<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">red</span></td>
+		<td align=middle><FONT color=black>0.016 MPa</FONT></td>
+	</tr>
+	<tr>
+		<td>Maximal Deflection</td>
+		<td align=middle>f<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">max</span></td>
+		<td align=middle><FONT color=black>0.004 microm</FONT></td>
+	</tr>
+		<td>Angle of Twist</td>
+		<td align=middle>&phi;</td>
+		<td align=middle><FONT color=black>0.00 deg</FONT></td>
+	</tr>
+</table>
+</blockquote>
+<h5 class="expanded">Preview</h5><blockquote><img src="ShaftPreview.png"></blockquote>
+<h5 class="expanded">Shear Force</h5><blockquote><img src="Graph3.png"></blockquote>
+<h5 class="expanded">Shear Force, YZ Plane</h5><blockquote><img src="Graph1.png"></blockquote>
+<h5 class="expanded">Shear Force, XZ Plane</h5><blockquote><img src="Graph2.png"></blockquote>
+<h5 class="expanded">Bending Moment</h5><blockquote><img src="Graph7.png"></blockquote>
+<h5 class="expanded">Bending Moment, YZ Plane</h5><blockquote><img src="Graph5.png"></blockquote>
+<h5 class="expanded">Bending Moment, XZ Plane</h5><blockquote><img src="Graph6.png"></blockquote>
+<h5 class="expanded">Deflection Angle</h5><blockquote><img src="Graph11.png"></blockquote>
+<h5 class="expanded">Deflection Angle, YZ Plane</h5><blockquote><img src="Graph9.png"></blockquote>
+<h5 class="expanded">Deflection Angle, XZ Plane</h5><blockquote><img src="Graph10.png"></blockquote>
+<h5 class="expanded">Deflection</h5><blockquote><img src="Graph15.png"></blockquote>
+<h5 class="expanded">Deflection, YZ Plane</h5><blockquote><img src="Graph13.png"></blockquote>
+<h5 class="expanded">Deflection, XZ Plane</h5><blockquote><img src="Graph14.png"></blockquote>
+<h5 class="expanded">Bending Stress</h5><blockquote><img src="Graph19.png"></blockquote>
+<h5 class="expanded">Bending Stress, YZ Plane</h5><blockquote><img src="Graph17.png"></blockquote>
+<h5 class="expanded">Bending Stress, XZ Plane</h5><blockquote><img src="Graph18.png"></blockquote>
+<h5 class="expanded">Shear Stress</h5><blockquote><img src="Graph23.png"></blockquote>
+<h5 class="expanded">Shear Stress, YZ Plane</h5><blockquote><img src="Graph21.png"></blockquote>
+<h5 class="expanded">Shear Stress, XZ Plane</h5><blockquote><img src="Graph22.png"></blockquote>
+<h5 class="expanded">Torsional Stress</h5><blockquote><img src="Graph24.png"></blockquote>
+<h5 class="expanded">Tension Stress</h5><blockquote><img src="Graph25.png"></blockquote>
+<h5 class="expanded">Reduced Stress</h5><blockquote><img src="Graph26.png"></blockquote>
+<h5 class="expanded">Ideal Diameter</h5><blockquote><img src="Graph27.png"></blockquote>
+<h5 class="expanded">Summary of Messages</h5>
+<blockquote>
+<table class="ta">
+<tr><td><p><FONT color=blue>23:09:14 Calculation: Calculated.</FONT></p></td></tr>
+</table>
+</blockquote>
+</blockquote>
+</body>
+</html>

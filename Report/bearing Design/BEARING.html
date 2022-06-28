@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bearing Component Generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body,p,table,th,td,h1,h2,h3,h4,h5{font-weight: normal; font-size: 10pt; font-family: Tahoma, Arial, Helvetica, sans-serif}
+body{color: #000000; background-color: #ffffff}
+h1{font-weight: bold; font-size: 145%; margin-bottom: 1em}
+h2{font-weight: bold; font-size: 130%; margin-bottom: 0.6em}
+h3{font-weight: bold; font-size: 120%; margin-bottom: 0.5em}
+h4{font-weight: bold; font-size: 110%; margin-bottom: 0.5em}
+h5{font-weight: bold; font-size: 100%; margin-bottom: 0.5em}
+p{margin: 0.5em 0em 0.3em 0em; line-height: 100%}
+blockquote{margin: 0em 0em 0em 1em; font-size: 100%; line-height: 100%; direction: ltr}
+.ta{border: dodgerblue 1px solid; border-collapse: collapse; background-color: #d9e6ff}
+.ta td,.ta th{border: dodgerblue 1px solid; padding: 2pt; valign: top}
+.ta0{border: 0px; margin-top: -4px; margin-bottom: -4px}
+.ta0 td{border: 0px; valign: top}
+.collapsed{background: url("data:image/gif;base64,R0lGODlhCQAJAIAAAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIRhI+hG7bwoJINIktzjizeUwAAOw==") left center no-repeat; display: block; padding: 0 0 0 14px; cursor: pointer}
+.expanded{background: url("data:image/gif;base64,R0lGODlhCQAJAIAAAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIQhI+hG8brXgPzTHllfKiDAgA7") left center no-repeat; display: block; padding: 0 0 0 14px; cursor: pointer}
+</style>
+<script type="text/javascript">
+var toggle = function(e) {
+	var elem = e.target;
+	var elemNext = elem.nextElementSibling;
+	if (elemNext){
+		var st = elemNext.style;
+		if (st)
+			if (st.display == "none"){
+				elem.className = "expanded";
+				st.removeProperty("display");
+			}else{
+				elem.className = "collapsed";
+				st.display = "none";
+			}
+	}
+}
+window.onload = function() {
+	var elems = document.getElementsByClassName("expanded");
+	for(var i = 0; i < elems.length; i++) {
+		var elem = elems[i]
+		elem.onclick = toggle;
+		var elemNext = elem.nextElementSibling;
+		if (elemNext){
+			var st = elemNext.style;
+			if (st)
+				st.removeProperty("display");
+		}
+	}
+	elems = document.getElementsByClassName("collapsed");
+	for(var i = 0; i < elems.length; i++) {
+		var elem = elems[i]
+		elem.onclick = toggle;
+		var elemNext = elem.nextElementSibling;
+		if (elemNext){
+			var st = elemNext.style;
+			if (st)
+				st.display = "none";
+		}
+	}
+}</script>
+</head>
+<body>
+<h1>Bearing Component Generator (Version: 2020.3 (Build 243373000, 373))</h1>
+<p>27/06/2022</p>
+<hr />
+<h3 class="collapsed">Project Info</h3>
+<blockquote>
+	<h5 class="collapsed">Summary</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>Title</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Subject</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Author</td>
+		<td>0x6f736f646f</td>
+		</tr>
+		<tr>
+		<td>Manager</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Company</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Category</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Keywords</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Comments</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+	<h5 class="collapsed">Project</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>Part Number</td>
+		<td>Assembled</td>
+		</tr>
+		<tr>
+		<td>Stock Number</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Description</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Revision Number</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Project</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Designer</td>
+		<td>0x6f736f646f</td>
+		</tr>
+		<tr>
+		<td>Engineer</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Authority</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Cost Center</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Cost</td>
+		<td>Ksh0.00</td>
+		</tr>
+		<tr>
+		<td>Date Created</td>
+		<td>27/06/2022</td>
+		</tr>
+		<tr>
+		<td>Vendor</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Catalog web link</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+	<h5 class="collapsed">Status</h5>
+	<blockquote>
+	<table class="ta">
+		<tr>
+		<td>User Status</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Design Status</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>Last Saved By</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Checked by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Engr Approved by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Date Eng Approved</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Part Type name</td>
+		<td>Assembly</td>
+		</tr>
+		<tr>
+		<td>Mfg Approved by</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Date Mfg Approved</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Standard</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Manufacturer</td>
+		<td></td>
+		</tr>
+		<tr>
+		<td>Standards Organization</td>
+		<td></td>
+		</tr>
+	</table>
+	</blockquote>
+</blockquote>
+<h3 class="expanded">Guide</h3>
+<blockquote>
+ <p>Type of Strength Calculation - Check Calculation</p>
+</blockquote>
+<h3 class="expanded">Loads</h3>
+<blockquote>
+<table class="ta">
+ <tr>
+  <td>Bearing radial load </td>
+  <td>F<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">r</span></td>
+  <td align="middle"><FONT color=magenta>74 N</FONT></td>
+ </tr>
+ <tr>
+  <td>Bearing axial load </td>
+  <td>F<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">a</span></td>
+  <td align="middle"><FONT color=magenta>0 N</FONT></td>
+ </tr>
+ <tr>
+  <td>Speed</td>
+  <td>n</td>
+  <td align="middle"><FONT color=magenta>620 rpm</FONT></td>
+ </tr>
+ <tr>
+  <td>Required static safety factor</td>
+  <td>s<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0</span></td>
+  <td align="middle"><FONT color=magenta>2.0 ul</FONT></td>
+ </tr>
+</table>
+</blockquote>
+<h3 class="expanded">Bearing</h3>
+<blockquote>
+<table class="ta">
+ <tr>
+  <td>Designation</td>
+  <td></td>
+  <td align="middle">CSN 02 4632 (E 19)</td>
+ </tr>
+ <tr>
+  <td>Bearing inside diameter</td>
+  <td>d</td>
+  <td align="middle"><FONT color=black>19.000 mm</FONT></td>
+ </tr>
+ <tr>
+  <td>Bearing outside diameter</td>
+  <td>D</td>
+  <td align="middle"><FONT color=black>40.000 mm</FONT></td>
+ </tr>
+ <tr>
+  <td>Bearing width</td>
+  <td>B</td>
+  <td align="middle"><FONT color=black>9.000 mm</FONT></td>
+ </tr>
+ <tr>
+  <td>Nominal contact angle of the bearing</td>
+  <td>&alpha;</td>
+  <td align="middle"><FONT color=black>0 deg</FONT></td>
+ </tr>
+ <tr>
+  <td>Basic dynamic load rating</td>
+  <td>C</td>
+  <td align="middle"><FONT color=black>8800 N</FONT></td>
+ </tr>
+ <tr>
+  <td>Basic static load rating</td>
+  <td>C<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0</span></td>
+  <td align="middle"><FONT color=black>1570 N</FONT></td>
+ </tr>
+ <tr>
+  <td>Dynamic radial load Factor</td>
+  <td>X</td>
+  <td align="middle"><FONT color=magenta>0.60 ul</FONT> / <FONT color=magenta>0.60 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Dynamic axial load Factor</td>
+  <td>Y</td>
+  <td align="middle"><FONT color=magenta>0.50 ul</FONT> / <FONT color=magenta>0.50 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Limit value of F<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">a</span>/F<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">r</span></td>
+  <td>e</td>
+  <td align="middle"><FONT color=magenta>0.40 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Static radial load Factor</td>
+  <td>X<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0</span></td>
+  <td align="middle"><FONT color=magenta>0.60 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Static axial load Factor</td>
+  <td>Y<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0</span></td>
+  <td align="middle"><FONT color=magenta>0.50 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Limiting speed lubrication grease</td>
+  <td>n<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">Lim1</span></td>
+  <td align="middle"><FONT color=magenta>0 rpm</FONT></td>
+ </tr>
+ <tr>
+  <td>Limiting speed lubrication oil</td>
+  <td>n<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">Lim2</span></td>
+  <td align="middle"><FONT color=magenta>0 rpm</FONT></td>
+ </tr>
+</table>
+</blockquote>
+<h3 class="expanded">Bearing Life Calculation</h3>
+<blockquote>
+<table class="ta">
+ <tr>
+  <td>Calculation Method</td>
+  <td></td>
+  <td align="middle">ANSI/AFBMA 9-1990 (ISO 281-1990)</td>
+ </tr>
+  <tr>
+  <td>Required rating life</td>
+  <td>L<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">req</span></td>
+  <td align="middle"><FONT color=magenta>10000 hr</FONT></td>
+ </tr>
+ <tr>
+  <td>Required reliability</td>
+  <td>R<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">req</span></td>
+  <td align="middle"><FONT color=magenta>90 ul</FONT></td>
+ </tr>
+
+ <tr>
+  <td>Life adjustment factor for special bearing properties</td>
+  <td>a<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">2</span></td>
+  <td align="middle"><FONT color=magenta>1.00 ul</FONT></td>
+ </tr>
+ <tr>
+  <td>Life adjustment factor for operating conditions</td>
+  <td>a<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">3</span></td>
+  <td align="middle"><FONT color=magenta>1.00 ul</FONT></td>
+ </tr>
+
+
+ <tr>
+  <td>Working temperature</td>
+  <td>T</td>
+  <td align="middle"><FONT color=magenta>80 c</FONT></td>
+ </tr>
+ <tr>
+  <td>Factor of Additional Forces</td>
+  <td>f<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">d</span></td>
+  <td align="middle"><FONT color=magenta>1.00 ul</FONT></td>
+ </tr>
+</table>
+</blockquote>
+<h3 class="expanded">Lubrication</h3>
+<blockquote>
+<table class="ta">
+ <tr>
+  <td>Friction factor</td>
+  <td>&mu;</td>
+  <td align="middle"><FONT color=magenta>0.0015 ul</FONT></td>
+ </tr>
+  <tr>
+  <td>Lubrication</td>
+  <td></td>
+  <td align="middle">Oil</td>
+ </tr>
+</table>
+</blockquote>
+<h3 class="expanded">Results</h3>
+<blockquote>
+<table class=ta>
+  <tr>
+    <td>Basic rating life</td>
+    <td>L<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">10</span></td>
+    <td align=middle><FONT color=black>212941600 hr</FONT></td></tr>
+  <tr>
+    <td>Adjusted rating life</td>
+    <td>L<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">na</span></td>
+    <td align=middle><FONT color=black>212941600 hr</FONT></td></tr>
+  <tr>
+    <td>Calculated static safety factor</td>
+    <td>s<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0c</span></td>
+    <td align=middle><FONT color=black>21.33877 ul</FONT></td></tr>
+  <tr>
+    <td>Power lost by friction</td>
+    <td>P<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">z</span></td>
+    <td align=middle><FONT color=black>0.04084 W</FONT></td></tr>
+  <tr>
+    <td>Necessary minimum load</td>
+    <td>F<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">min</span></td>
+    <td align=middle><FONT color=black>16 N</FONT></td></tr>
+  <tr>
+    <td>Static equivalent load</td>
+    <td>P<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">0</span></td>
+    <td align=middle><FONT color=black>74 N</FONT></td></tr>
+  <tr>
+    <td>Dynamic equivalent load</td>
+    <td>P</td>
+    <td align=middle><FONT color=black>44 N</FONT></td></tr>
+  <tr>
+    <td>Over-revolving factor</td>
+    <td>k<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">n</span></td>
+    <td align=middle><FONT color=black>0.000 ul</FONT></td></tr>
+  <tr>
+    <td>Life adjustment factor for reliability</td>
+    <td>a<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">1</span></td>
+    <td align=middle><FONT color=black>1.00 ul</FONT></td></tr>
+  <tr>
+    <td>Temperature factor</td>
+    <td>f<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">t</span></td>
+    <td align=middle><FONT color=black>1.00 ul</FONT></td></tr>
+  <tr>
+    <td>Equivalent speed</td>
+    <td>n<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">e</span></td>
+    <td align=middle><FONT color=black>620 rpm</FONT></td></tr>
+  <tr>
+    <td>Minimum speed</td>
+    <td>n<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">min</span></td>
+    <td align=middle><FONT color=black>620 rpm</FONT></td></tr>
+  <tr>
+    <td>Maximum speed</td>
+    <td>n<span style="FONT-SIZE: smaller; VERTICAL-ALIGN: sub">max</span></td>
+    <td align=middle><FONT color=black>620 rpm</FONT></td></tr>
+  <tr>
+    <td>Strength Check</td>
+    <td align="middle" colSpan=3><b><FONT color=green>Positive</FONT></b></td></tr>
+</table>
+</blockquote>
+<h3 class="expanded">Summary of Messages</h3>
+<blockquote>
+<table class="ta">
+<tr><td><p><FONT color=blue>23:33:21 : Limiting speed lubrication grease value not found, over-revolving factor can't be calculated.</FONT></p><p><FONT color=blue>23:33:21 Calculation: Calculation indicates design compliance!</FONT></p></td></tr>
+</table>
+</blockquote>
+</body>
+</html>
